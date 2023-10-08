@@ -1,4 +1,4 @@
-import 'package:driipa_reloaded/src/sigin/sign_in.dart';
+import 'package:driipa_reloaded/src/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,8 +17,8 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const SignIn()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const OnBoarding()));
     });
   }
 
