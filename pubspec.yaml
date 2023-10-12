@@ -16,7 +16,12 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.2.0+1
-  google_fonts: ^6.1.0
+  http: ^1.1.0
+  scroll_date_picker: ^3.7.3
+  shared_preferences: ^2.2.1
+  walletconnect_flutter_v2: ^2.1.4
+  web3auth_flutter: ^2.0.0
+  web3dart: ^2.4.1
 
 dev_dependencies:
   flutter_app_name: ^0.1.0

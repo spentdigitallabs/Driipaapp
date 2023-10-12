@@ -1,6 +1,8 @@
-import 'package:driipa_reloaded/src/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../core/components/bg_gradient.dart';
+import 'onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -32,21 +34,16 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.black, Color(0xFF320A67)])),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Image.asset('assets/images/driipalogo.png'),
-              const Text("it pays to interact",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700))
-            ])));
+        body: Stack(alignment: Alignment.bottomCenter, children: [
+      BackgroundGradient(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Image.asset('assets/images/driipalogo.png'),
+        const Text("it pays to interact",
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700))
+      ])),
+      Image.asset('assets/images/splash_hidden.png',
+          opacity: const AlwaysStoppedAnimation(.4))
+    ]));
   }
 }

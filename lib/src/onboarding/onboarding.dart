@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants.dart';
+import '../../core/models.dart';
 import '../../src/onboarding/onboarding_widget.dart';
-import '../../src/sigin/sign_in.dart';
+import '../signin/sign_in.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -17,12 +17,12 @@ class _OnBoardingState extends State<OnBoarding> {
         image: "assets/images/user_with_phone.png",
         title: "Chat & Post",
         description:
-            "Hey {Name}, Welcome to Driipa, the ultimate everything app! Engage, collaborate, and get rewarded with Driipcoin by sharing ideas, jokes, pictures, news, and more with fellow creators in real-time."),
+            'Welcome to Driipa, the ultimate everything app! Engage, collaborate, and get rewarded with Driipcoin by sharing ideas, jokes, pictures, news, and more with fellow creators in real-time."'),
     OnboardingData(
         image: "assets/images/wallet.png",
         title: "Wallet",
         description:
-            "Congratulations! You own 4,088.74 Driipcoin. Manage your crypto easily - buy, sell, send, receive, track spending history, and stay updated with altcoin prices, all within your Driipa wallet."),
+            'Manage your crypto easily – buy, sell, send, receive, track spending history, and stay updated with altcoin prices, all within your Driipa wallet.'),
     OnboardingData(
         image: "assets/images/shield.png",
         title: "Blockchain & Security",

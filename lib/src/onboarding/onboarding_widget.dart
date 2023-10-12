@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/constants.dart';
+import '../../core/models.dart';
 
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
