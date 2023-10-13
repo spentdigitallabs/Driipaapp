@@ -1,4 +1,4 @@
-package com.example.driipa_reloaded
+package com.driipa.test
 
 import io.flutter.embedding.android.FlutterActivity
 

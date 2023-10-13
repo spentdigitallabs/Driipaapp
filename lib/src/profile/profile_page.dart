@@ -3,13 +3,16 @@ import 'package:driipa_reloaded/src/signin/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web3auth_flutter/input.dart';
+import 'package:web3auth_flutter/output.dart';
 import 'package:web3auth_flutter/web3auth_flutter.dart';
 
 import '../../core/components/bg_gradient.dart';
 import 'profile_image.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key, this.user});
+
+  final TorusUserInfo? user;
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -61,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             top: 80,
                             left: MediaQuery.of(context).size.width * 0.35,
                             child: SettingsProfileImage(
-                                avatarUrl:
+                                avatarUrl: widget.user?.profileImage ??
                                     'https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp',
                                 onChange: () {})),
                         Positioned(

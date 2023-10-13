@@ -30,7 +30,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   String _result = '';
   bool logoutVisible = false;
-  String rpcUrl = 'https://rpc.ankr.com/eth_goerli';
+  String rpcUrl = "https://rpc-mumbai.maticvigil.com";
 
   @override
   void dispose() {
@@ -43,24 +43,22 @@ class _SignInState extends State<SignIn> {
     initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     final themeMap = HashMap<String, String>();
     themeMap['primary'] = "#229954";
 
     Uri redirectUrl;
     if (Platform.isAndroid) {
-      redirectUrl = Uri.parse(
-          'torusapp://org.torusresearch.flutter.web3authexample/auth');
+      redirectUrl = Uri.parse('torusapp://com.driipa.test');
     } else if (Platform.isIOS) {
-      redirectUrl = Uri.parse('com.web3auth.flutter.driipa://openlogin');
+      redirectUrl = Uri.parse('com.driipa.test://openlogin');
     } else {
       throw UnKnownException('Unknown platform');
     }
 
     await Web3AuthFlutter.init(Web3AuthOptions(
         clientId:
-            'BHZPoRIHdrfrdXj5E8G5Y72LGnh7L8UFuM8O0KrZSOs4T8lgiZnebB5Oc6cbgYSo3qSz7WBZXIs8fs6jgZqFFgw',
+            'BEYNKN6OKs-3EYo_Ms2OCj8M9E2kNT0OefAC6isEXwD9BZLpeCkFUrcwUm7AEn3abUs8D4Mh1tTngQBUJ4hm8aE',
         network: Network.testnet,
         redirectUrl: redirectUrl,
         whiteLabel:
@@ -69,7 +67,6 @@ class _SignInState extends State<SignIn> {
     await Web3AuthFlutter.initialize();
 
     final String res = await Web3AuthFlutter.getPrivKey();
-    print(res);
     if (res.isNotEmpty) {
       setState(() {
         logoutVisible = true;
@@ -87,16 +84,22 @@ class _SignInState extends State<SignIn> {
                 child: Column(children: [
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Row(children: [
-                        IconButton(
-                            onPressed: () => Navigator.of(context).pop(),
-                            icon: const Icon(Icons.arrow_back,
-                                color: Colors.white)),
-                        Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 30.0),
-                            child: Image.asset('assets/images/driipalogo.png'))
-                      ])),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Visibility(
+                              visible: false,
+                              child: IconButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  icon: const Icon(Icons.arrow_back,
+                                      color: Colors.white)),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30.0),
+                                child:
+                                    Image.asset('assets/images/driipalogo.png'))
+                          ])),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(

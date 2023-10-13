@@ -1,14 +1,11 @@
 import 'package:driipa_reloaded/src/onboarding/onboarding_forms.dart';
 import 'package:flutter/material.dart';
-import 'package:web3auth_flutter/web3auth_flutter.dart';
 import '../../core/components/bg_gradient.dart';
 
 import 'package:http/http.dart';
 import 'package:web3dart/web3dart.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:web3auth_flutter/enums.dart';
-import 'package:web3auth_flutter/input.dart';
 import 'package:web3auth_flutter/output.dart';
 import 'dart:async';
 
@@ -201,8 +198,10 @@ class _ConfirmWalletState extends State<ConfirmWallet> {
                                                           color: Colors
                                                               .white, // Border color
                                                           width: 1.0))),
-                                              label: Text(
-                                                  "${_walletAddress.substring(0, 6)}...${_walletAddress.substring(_walletAddress.length - 6)}")),
+                                              label: Text(_walletAddress
+                                                      .isNotEmpty
+                                                  ? "${_walletAddress.substring(0, 6)}...${_walletAddress.substring(_walletAddress.length - 6)}"
+                                                  : "")),
                                           Padding(
                                               padding: const EdgeInsets.symmetric(
                                                   horizontal: 10.0),

@@ -10,7 +10,7 @@ class WalletPage extends StatelessWidget {
     return Scaffold(
         body: BackgroundGradient(
             child: Padding(
-                padding: const EdgeInsets.only(top: 50, right: 5, left: 5),
+                padding: const EdgeInsets.only(top: 10, right: 5, left: 5),
                 child: Column(children: [
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -165,7 +165,7 @@ class WalletPage extends StatelessWidget {
                                                                     horizontal:
                                                                         25,
                                                                     vertical:
-                                                                        20),
+                                                                        15),
                                                                 textStyle: const TextStyle(
                                                                     fontSize:
                                                                         16,
@@ -191,7 +191,7 @@ class WalletPage extends StatelessWidget {
                                                                     horizontal:
                                                                         25,
                                                                     vertical:
-                                                                        20),
+                                                                        15),
                                                             textStyle:
                                                                 const TextStyle(
                                                                     fontSize:

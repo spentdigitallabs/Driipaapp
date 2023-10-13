@@ -18,3 +18,4 @@ Future<String> getKey() async {
   final privateKey = prefs.getString('privateKey') ?? '';
   return privateKey;
 }
+  
