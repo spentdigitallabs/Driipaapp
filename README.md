@@ -1,6 +1,6 @@
 # driipa_reloaded
 
-A new Flutter project.
+A demo for driipa mobile app project.
 
 ## Getting Started
 
@@ -19,6 +19,7 @@ include with your application.
 
 The `assets/images` directory contains [resolution-aware
 images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+
 
 ## Localization
 
